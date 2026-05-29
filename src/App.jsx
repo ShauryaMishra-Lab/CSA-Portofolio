@@ -17,6 +17,7 @@ import {
   Trophy,
   X
 } from "lucide-react";
+import { createPortal } from "react-dom";
 import { createRoot } from "react-dom/client";
 import golfProfilePhoto from "./assets/golf-profile-photo.jpg";
 import "./styles.css";
@@ -92,7 +93,7 @@ const boardItems = [
   {
     label: "Focus",
     title: "Tournament focus, coding discipline",
-    copy: "Golf has trained me to stay patient under pressure. Computer science gives me a way to turn that focus into organized, working projects.",
+    copy: "Golf has trained me to stay patient under pressure. Computer science has given me a way to turn that focus into organized, working projects.",
     stat: "01"
   },
   {
@@ -104,7 +105,7 @@ const boardItems = [
   {
     label: "Compete",
     title: "Pressure becomes a process",
-    copy: "Competing in events has helped me build resilience, communication, and the habit of improving after every attempt.",
+    copy: "Competing in events has helped me build resilience, communication, and the healthy habit of improving after every attempt.",
     stat: "03"
   },
   {
@@ -129,7 +130,7 @@ const projects = [
     course: "Computer Science Application / Python Data Project",
     dates: "November 2025",
     objective:
-      "Use Formula 1 telemetry data to create a race trace chart for the 2021 Bahrain Grand Prix, showing each driver's gap to the race leader by lap.",
+      "I used Formula 1 telemetry data to create a race trace chart for the 2021 Bahrain Grand Prix, showing each driver's gap to the race leader by lap.",
     responsibilities:
       "I loaded race lap data with FastF1, calculated total race time and gap to leader, exported the results as a CSV file, and generated a PNG line graph to show race progress.",
     learned:
@@ -151,7 +152,7 @@ const projects = [
     objective:
       "Practice object-oriented programming by creating a superclass and multiple subclasses that show how related classes share methods and variables.",
     responsibilities:
-      "I created the class structure, added superclass and subclass relationships, wrote methods, and explained how inheritance helps organize code.",
+      "I created the class structure, added superclass and subclass relationships, and wrote methods.",
     learned:
       "I learned that inheritance reduces repeated code and makes programs easier to extend because shared behavior can live in one superclass.",
     skills: ["Java", "OOP", "Inheritance", "UML", "Debugging"],
@@ -403,16 +404,15 @@ function Hero() {
     <section id="home" className="hero-section">
       <div className="hero-grid">
         <div className="hero-copy reveal-on-scroll">
-          <p className="kicker">Golf Athlete / Computer Science Builder</p>
+          <p className="kicker">Competitive Golfer / Developer</p>
           <h1 className="animated-title">
-            <span>Fairway focus.</span>
-            <span>Code logic.</span>
-            <span>Real progress.</span>
+            <span>Green focused.</span>
+            <span>Developer.</span>
+            <span>Progress.</span>
           </h1>
           <p>
-            I am {student.name}, a competitive golfer and developer at {student.school}. I bring the same patience,
-            pressure control, and discipline from tournament golf into computer science, business, leadership, and
-            communication.
+            I am {student.name}, a competitive golfer and a developer at {student.school}. I bring the same patience,
+            pressure control, and discipline from my golf career into computer science.
           </p>
           <div className="hero-actions">
             <a className="button dark" href="#projects">
@@ -448,7 +448,7 @@ function Hero() {
               </div>
               <div className="profile-meta">
                 <p>{student.name}</p>
-                <h2>Golf Athlete / CS Builder</h2>
+                <h2>Golfer / Developer</h2>
                 <span>{student.location}</span>
               </div>
               <div className="profile-lines">
@@ -583,7 +583,7 @@ function About() {
       <SectionHeader
         kicker="About Me"
         title="A focused developer building skill through code, school, and competition."
-        copy="I am interested in the connection between athletic discipline and technical problem solving. Golf teaches me focus, patience, and adjustment; computer science lets me build systems, test ideas, and solve real problems."
+        copy="I am interested in the connection between athletic discipline and technical problem solving. Golf teaches me focus, patience, and adjustment; computer science lets me build programs, test ideas, and solve real problems."
       />
       <div className="about-grid reveal-on-scroll">
         <article>
@@ -623,7 +623,6 @@ function Resume() {
       <SectionHeader
         kicker="Resume"
         title="Education, skills, activities, and experience."
-        copy="The resume section is organized into clear columns so visitors can scan dates, coursework, skills, and activities quickly."
       />
       <div className="resume-controls reveal-on-scroll" role="tablist" aria-label="Resume focus">
         {[
@@ -756,16 +755,12 @@ function ProjectModal({ selectedProject, onClose }) {
 
   const { project, index } = selectedProject;
 
-  return (
-    <div className="modal-backdrop" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
+  return createPortal(
+    <div className="modal-backdrop" role="presentation" onClick={(event) => event.target === event.currentTarget && onClose()}>
       <div className="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
         <button
           className="close-button"
           type="button"
-          onMouseDown={(event) => {
-            event.preventDefault();
-            onClose();
-          }}
           onClick={onClose}
           aria-label="Close project details"
         >
@@ -794,7 +789,8 @@ function ProjectModal({ selectedProject, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -810,8 +806,7 @@ function Projects() {
     <section id="projects" className="page-band">
       <SectionHeader
         kicker="Projects"
-        title="Two required projects with objective, responsibilities, learning, skills, and documentation."
-        copy="Each project is written in a concise format to match the rubric and make the work easy to evaluate."
+        title="TWO PROJECTS"
       />
       <div className="project-feature reveal-on-scroll">
         <div>
