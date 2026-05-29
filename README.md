@@ -1,1 +1,92 @@
-# CSA-Portofolio
+# CSA Portfolio
+
+A React portfolio website for Shaurya Mishra, built for Computer Science Application. The site presents a golf-athlete and computer-science identity with animated visuals, resume content, project documentation areas, and two required project features.
+
+## Theme
+
+The portfolio is designed around the connection between competitive golf and computer science:
+
+- Golf brings focus, patience, resilience, and performance under pressure.
+- Computer science brings structure, debugging, data, logic, and project building.
+- The design uses fairway greens, warm golds, motion, project cards, and a sports-tech hero image to make that identity clear.
+
+## Featured Projects
+
+### F1 Race Trace
+
+A Python data visualization project that uses FastF1 race telemetry for the 2021 Bahrain Grand Prix.
+
+It loads lap data, calculates each driver's gap to the race leader by lap, exports a CSV file, and creates a PNG line chart showing race progress.
+
+Project links:
+
+- [GitHub Source](https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student)
+- [README](https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student/blob/main/README.md)
+
+### Java Inheritance Program
+
+A Java object-oriented programming project focused on superclass and subclass relationships.
+
+It demonstrates how inheritance can reduce repeated code, organize related classes, and make a program easier to extend and explain through a UML-style structure.
+
+## Built With
+
+- React
+- Vite
+- JavaScript / JSX
+- CSS
+- Lucide React icons
+
+## Run Locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```text
+.
+├── index.html
+├── package.json
+├── src
+│   ├── App.jsx
+│   ├── styles.css
+│   └── assets
+│       └── golf-cs-hero.png
+└── README.md
+```
+
+## Portfolio Sections
+
+- Home: golf athlete and computer science builder identity
+- Performance: highlights for golf, coding, CS growth, and mindset
+- About: background, interests, and growth goals
+- Resume: education timeline, technical skills, activities, and professional skills
+- Projects: F1 Race Trace and Java Inheritance Program
+- Documentation: placeholder area for project files, rubrics, and final documents
+- Contact: email and GitHub links
+
+## Notes
+
+The documentation and rubric links are ready to be replaced with final class documents when those files are available.
