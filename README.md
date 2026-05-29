@@ -2,6 +2,10 @@
 
 A React portfolio website for Shaurya Mishra, built for Computer Science Application. The site presents a golf-athlete and computer-science identity with animated visuals, resume content, project documentation areas, and two required project features.
 
+Live site:
+
+- [GitHub Pages Portfolio](https://shauryamishra-lab.github.io/CSA-Portofolio/)
+
 ## Theme
 
 The portfolio is designed around the connection between competitive golf and computer science:
@@ -63,12 +67,22 @@ Preview the production build:
 npm run preview
 ```
 
+## GitHub Pages Deployment
+
+This project deploys automatically with GitHub Actions when changes are pushed to `main`.
+
+The workflow builds the Vite app into `dist/` and publishes that folder to GitHub Pages. The production Vite base path is configured as `/CSA-Portofolio/` so the built `index.html` loads the JavaScript, CSS, and image assets correctly from the repository Pages URL.
+
 ## Project Structure
 
 ```text
 .
+├── .github
+│   └── workflows
+│       └── deploy-pages.yml
 ├── index.html
 ├── package.json
+├── vite.config.js
 ├── src
 │   ├── App.jsx
 │   ├── styles.css
