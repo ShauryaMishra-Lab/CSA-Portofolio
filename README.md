@@ -8,7 +8,7 @@ The portfolio is designed around the connection between competitive golf and com
 
 - Golf brings focus, patience, resilience, and performance under pressure.
 - Computer science brings structure, debugging, data, logic, and project building.
-- The design uses fairway greens, warm golds, motion, project cards, and a sports-tech hero image to make that identity clear.
+- The design uses fairway greens, warm golds, motion, project cards, and a real golf-course photo to make that identity clear.
 
 ## Featured Projects
 
@@ -73,7 +73,7 @@ npm run preview
 │   ├── App.jsx
 │   ├── styles.css
 │   └── assets
-│       └── golf-cs-hero.png
+│       └── golf-profile-photo.jpg
 └── README.md
 ```
 

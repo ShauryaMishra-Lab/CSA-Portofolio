@@ -18,7 +18,7 @@ import {
   X
 } from "lucide-react";
 import { createRoot } from "react-dom/client";
-import golfCsHero from "./assets/golf-cs-hero.png";
+import golfProfilePhoto from "./assets/golf-profile-photo.jpg";
 import "./styles.css";
 
 const student = {
@@ -441,7 +441,7 @@ function Hero() {
           <div className="profile-card-inner">
             <div className="profile-face profile-front">
               <div className="portrait athlete-visual">
-                <img src={golfCsHero} alt="Golf course and computer science visual for Shaurya Mishra" />
+                <img src={golfProfilePhoto} alt="Shaurya Mishra on a golf course at night" />
                 <span className="swing-arc" />
                 <span className="data-line data-one" />
                 <span className="data-line data-two" />
