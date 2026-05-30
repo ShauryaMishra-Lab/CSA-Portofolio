@@ -140,8 +140,7 @@ const projects = [
     visualType: "race",
     links: [
       { label: "GitHub Source", href: "https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student" },
-      { label: "README", href: "https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student/blob/main/README.md" },
-      { label: "Rubric", href: "#documentation" }
+      { label: "README", href: "https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student/blob/main/README.md" }
     ]
   },
   {
@@ -162,8 +161,7 @@ const projects = [
       { label: "GitHub Source", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program" },
       { label: "README", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/README.md" },
       { label: "Pet.java", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/Pet.java" },
-      { label: "Runner", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/InheritedPet.java" },
-      { label: "Rubric", href: "#documentation" }
+      { label: "Runner", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/InheritedPet.java" }
     ]
   }
 ];
@@ -329,17 +327,14 @@ const documentationItems = [
   {
     icon: FileText,
     title: "F1 Race Trace Documentation",
-    note: "Python FastF1 project source, README, CSV output, chart image, and process reflection."
+    note: "Python FastF1 project source, README, CSV output, chart image, and process reflection.",
+    href: "https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student"
   },
   {
     icon: BookOpen,
     title: "Java Inheritance Program Documentation",
-    note: "Java source files for Pet, Cat, Dog, and InheritedPet, plus README explanation and project reflection."
-  },
-  {
-    icon: FileText,
-    title: "Portfolio Rubric",
-    note: "The grading rubric or project requirement sheet."
+    note: "Java source files for Pet, Cat, Dog, and InheritedPet, plus README explanation and project reflection.",
+    href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program"
   }
 ];
 
@@ -1066,8 +1061,8 @@ function Documentation() {
     <section id="documentation" className="page-band cream">
       <SectionHeader
         kicker="Documentation"
-        title="Project documents and rubric links."
-        copy="These links are ready to be replaced with final Google Drive, PDF, Java, UML, or rubric files when the documents are available."
+        title="Project documentation and source repositories."
+        copy="Open each project repository to view the source code, README, and supporting project files."
       />
       <div className="doc-layout reveal-on-scroll">
         <div className="doc-grid">
@@ -1091,7 +1086,9 @@ function Documentation() {
           <ActiveIcon size={30} />
           <h3>{documentationItems[activeDoc].title}</h3>
           <p>{documentationItems[activeDoc].note}</p>
-          <a href="#projects">Connected Projects</a>
+          <a href={documentationItems[activeDoc].href} target="_blank" rel="noreferrer">
+            Open Repository
+          </a>
         </div>
       </div>
     </section>

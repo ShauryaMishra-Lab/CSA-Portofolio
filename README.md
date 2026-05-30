@@ -105,9 +105,5 @@ The workflow builds the Vite app into `dist/` and publishes that folder to GitHu
 - About: background, interests, and growth goals
 - Resume: education timeline, technical skills, activities, and professional skills
 - Projects: F1 Race Trace and Java Inheritance Program
-- Documentation: placeholder area for project files, rubrics, and final documents
+- Documentation: source repository links for the F1 and Java projects
 - Contact: email and GitHub links
-
-## Notes
-
-The documentation and rubric links are ready to be replaced with final class documents when those files are available.
