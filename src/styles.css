@@ -1166,7 +1166,9 @@ dd {
 }
 
 .visual-1 {
-  background: linear-gradient(135deg, var(--gold), #f3dfaa 48%, var(--sky));
+  background:
+    linear-gradient(135deg, rgba(20, 26, 35, 0.18), rgba(167, 217, 91, 0.14)),
+    #111820;
 }
 
 .visual-2 {
@@ -1203,6 +1205,86 @@ dd {
 
 .browser-bar span:nth-child(3) {
   animation-delay: -1.2s;
+}
+
+.f1-code-gallery {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 16px;
+}
+
+.f1-code-shot {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(184, 216, 232, 0.22);
+  background: #0b1118;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+}
+
+.f1-code-shot:nth-child(2) {
+  transform: translateX(28px);
+}
+
+.f1-code-shot figcaption {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(184, 216, 232, 0.18);
+  padding: 0 14px;
+  color: #abd7ff;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
+.f1-code-shot figcaption span {
+  width: 44px;
+  height: 8px;
+  border-block: 3px solid #abd7ff;
+}
+
+.f1-code-shot ol {
+  max-height: 230px;
+  margin: 0;
+  overflow: hidden;
+  padding: 14px 18px 18px 56px;
+  color: #8f98a7;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(10px, 1.04vw, 13px);
+  line-height: 1.58;
+}
+
+.f1-code-shot li {
+  padding-left: 10px;
+}
+
+.f1-code-shot code {
+  color: #b8dcff;
+  white-space: pre-wrap;
+}
+
+.f1-code-shot li:nth-child(11),
+.f1-code-shot li:nth-child(12),
+.f1-code-shot li:nth-child(13),
+.f1-code-shot li:nth-child(14),
+.f1-code-shot li:nth-child(20),
+.f1-code-shot li:nth-child(21),
+.f1-code-shot li:nth-child(22),
+.f1-code-shot:nth-child(2) li:nth-child(10),
+.f1-code-shot:nth-child(2) li:nth-child(11),
+.f1-code-shot:nth-child(2) li:nth-child(13),
+.f1-code-shot:nth-child(2) li:nth-child(14),
+.f1-code-shot:nth-child(2) li:nth-child(15),
+.f1-code-shot:nth-child(2) li:nth-child(18),
+.f1-code-shot:nth-child(2) li:nth-child(19),
+.f1-code-shot:nth-child(2) li:nth-child(20),
+.f1-code-shot:nth-child(2) li:nth-child(21),
+.f1-code-shot:nth-child(2) li:nth-child(22),
+.f1-code-shot:nth-child(2) li:nth-child(23) {
+  color: #ff8178;
 }
 
 .race-trace-lines {
@@ -1834,6 +1916,10 @@ footer {
   .project-controls {
     justify-content: flex-start;
   }
+
+  .f1-code-shot:nth-child(2) {
+    transform: translateX(14px);
+  }
 }
 
 @media (max-width: 560px) {
@@ -1854,6 +1940,16 @@ footer {
 
   .project-visual {
     min-height: 330px;
+  }
+
+  .f1-code-shot:nth-child(2) {
+    transform: none;
+  }
+
+  .f1-code-shot ol {
+    max-height: 190px;
+    padding-left: 46px;
+    font-size: 10px;
   }
 
   .performance-inner {
