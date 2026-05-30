@@ -249,6 +249,82 @@ const f1CodeShots = [
   }
 ];
 
+const javaCodeShots = [
+  {
+    label: "InheritedPet.java",
+    start: 1,
+    lines: [
+      "public class InheritedPet",
+      "{",
+      "  public static void main(String[] args)",
+      "  {",
+      '    System.out.println("My cat");',
+      "",
+      "    Cat myCat = new Cat();",
+      '    myCat.setName("KID CUDI");',
+      "    myCat.purr();",
+      "    myCat.eat();",
+      "    myCat.play();",
+      "    myCat.sleep();",
+      "",
+      '    System.out.println("My dog");',
+      "",
+      "    Dog myDog = new Dog();",
+      '    myDog.setName("DRAKE");',
+      "    myDog.walk();",
+      "    myDog.eat();",
+      "    myDog.play();",
+      "    myDog.sleep();",
+      "  }",
+      "}"
+    ]
+  },
+  {
+    label: "Pet.java",
+    start: 1,
+    lines: [
+      "public class Pet",
+      "{",
+      "  private String name;",
+      "  private int energy;",
+      "  private int happy;",
+      "",
+      "  public void setName(String name)",
+      "  {",
+      "    this.name = name;",
+      '    System.out.println("My name is " + name);',
+      "  }",
+      "",
+      "  public String getName()",
+      "  {",
+      "    return name;",
+      "  }",
+      "",
+      "  public void eat()",
+      "  {",
+      "    energy += 10;",
+      "    happy += 5;",
+      '    System.out.println("FOODTIME!");',
+      "  }",
+      "",
+      "  public void sleep()",
+      "  {",
+      "    energy += 5;",
+      "    happy -= 2;",
+      '    System.out.println("zzzz");',
+      "  }",
+      "",
+      "  public void play()",
+      "  {",
+      "    energy -= 5;",
+      "    happy += 5;",
+      '    System.out.println("playing time!");',
+      "  }",
+      "}"
+    ]
+  }
+];
+
 const documentationItems = [
   {
     icon: FileText,
@@ -796,23 +872,7 @@ function ProjectVisual({ index, alt, type }) {
       {type === "race" ? (
         <F1CodeGallery />
       ) : (
-        <>
-          <div className="browser-bar">
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="java-class-stack">
-            <span>Pet superclass</span>
-            <span>Cat extends Pet</span>
-            <span>Dog extends Pet</span>
-          </div>
-          <div className="visual-code">
-            <span />
-            <span />
-            <span />
-          </div>
-        </>
+        <JavaCodeGallery />
       )}
     </div>
   );
@@ -823,6 +883,28 @@ function F1CodeGallery() {
     <div className="f1-code-gallery">
       {f1CodeShots.map((shot) => (
         <figure className="f1-code-shot" key={shot.label}>
+          <figcaption>
+            <span />
+            <strong>{shot.label}</strong>
+          </figcaption>
+          <ol start={shot.start}>
+            {shot.lines.map((line, lineIndex) => (
+              <li key={`${shot.label}-${lineIndex}`}>
+                <code>{line || " "}</code>
+              </li>
+            ))}
+          </ol>
+        </figure>
+      ))}
+    </div>
+  );
+}
+
+function JavaCodeGallery() {
+  return (
+    <div className="java-code-gallery">
+      {javaCodeShots.map((shot) => (
+        <figure className="java-code-shot" key={shot.label}>
           <figcaption>
             <span />
             <strong>{shot.label}</strong>
