@@ -29,9 +29,16 @@ Project links:
 
 ### Java Inheritance Program
 
-A Java object-oriented programming project focused on superclass and subclass relationships.
+A Java object-oriented programming project focused on superclass and subclass relationships using `Pet`, `Cat`, `Dog`, and `InheritedPet`.
 
-It demonstrates how inheritance can reduce repeated code, organize related classes, and make a program easier to extend and explain through a UML-style structure.
+It demonstrates how `Cat` and `Dog` inherit shared pet actions from `Pet`, while adding unique methods such as `purr()` and `walk()`. The runner class creates pet objects, names them, and calls inherited and subclass-specific methods.
+
+Project links:
+
+- [GitHub Source](https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program)
+- [README](https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/README.md)
+- [Pet.java](https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/Pet.java)
+- [InheritedPet.java](https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/InheritedPet.java)
 
 ## Built With
 

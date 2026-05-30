@@ -150,17 +150,19 @@ const projects = [
     course: "Computer Science Application",
     dates: "Spring 2026",
     objective:
-      "Practice object-oriented programming by creating a superclass and multiple subclasses that show how related classes share methods and variables.",
+      "Practice object-oriented programming by creating a Pet superclass and Cat and Dog subclasses that share methods and variables.",
     responsibilities:
-      "I created the class structure, added superclass and subclass relationships, and wrote methods.",
+      "I created the Pet class with name, energy, and happiness data; added shared methods such as setName(), getName(), eat(), sleep(), and play(); then built Cat, Dog, and InheritedPet to test inherited behavior.",
     learned:
-      "I learned that inheritance reduces repeated code and makes programs easier to extend because shared behavior can live in one superclass.",
-    skills: ["Java", "OOP", "Inheritance", "UML", "Debugging"],
-    imageAlt: "Java inheritance program preview with superclass and subclass structure",
+      "I learned how inheritance reduces repeated code because Cat and Dog can reuse Pet methods while adding their own actions like purr() and walk().",
+    skills: ["Java", "OOP", "Inheritance", "Superclass", "Subclasses", "Debugging"],
+    imageAlt: "Java inheritance program preview showing Pet superclass with Cat and Dog subclasses",
     visualType: "java",
     links: [
-      { label: "Project Documentation", href: "#documentation" },
-      { label: "Java / UML File", href: "#documentation" },
+      { label: "GitHub Source", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program" },
+      { label: "README", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/README.md" },
+      { label: "Pet.java", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/Pet.java" },
+      { label: "Runner", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/InheritedPet.java" },
       { label: "Rubric", href: "#documentation" }
     ]
   }
@@ -256,7 +258,7 @@ const documentationItems = [
   {
     icon: BookOpen,
     title: "Java Inheritance Program Documentation",
-    note: "Java source, superclass/subclass structure, UML diagram, explanation, and project reflection."
+    note: "Java source files for Pet, Cat, Dog, and InheritedPet, plus README explanation and project reflection."
   },
   {
     icon: FileText,
@@ -801,9 +803,9 @@ function ProjectVisual({ index, alt, type }) {
             <span />
           </div>
           <div className="java-class-stack">
-            <span>Superclass</span>
-            <span>Subclass A</span>
-            <span>Subclass B</span>
+            <span>Pet superclass</span>
+            <span>Cat extends Pet</span>
+            <span>Dog extends Pet</span>
           </div>
           <div className="visual-code">
             <span />
