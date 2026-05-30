@@ -408,7 +408,6 @@ function Hero() {
           <h1 className="animated-title">
             <span>Green focused.</span>
             <span>Developer.</span>
-            <span>Progress.</span>
           </h1>
           <p>
             I am {student.name}, a competitive golfer and a developer at {student.school}. I bring the same patience,
