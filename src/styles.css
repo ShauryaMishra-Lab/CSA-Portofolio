@@ -1587,7 +1587,15 @@ dd {
   line-height: 1.65;
 }
 
-.doc-preview a {
+.doc-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.doc-preview a,
+.doc-link-list a {
   width: fit-content;
   border-bottom: 1px solid currentColor;
   color: var(--clay);

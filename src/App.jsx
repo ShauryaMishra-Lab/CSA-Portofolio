@@ -29,7 +29,7 @@ const student = {
   location: "Dublin, California",
   graduation: "2028",
   course: "Computer Science Application",
-  updated: "Last Updated 2026",
+  updated: "Last Updated May 2026",
   email: "shauryakumarmishra@gmail.com",
   github: "https://github.com/ShauryaMishra-Lab"
 };
@@ -37,6 +37,7 @@ const student = {
 const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${student.email}`;
 
 const navItems = [
+  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Resume", href: "#resume" },
   { label: "Projects", href: "#projects" },
@@ -47,30 +48,39 @@ const navItems = [
 const education = [
   {
     period: "2024-2025 Academic Year",
-    entries: ["Algebra 2", "Biology", "English 1", "Spanish 2", "Computer Science Essentials"]
+    entries: [
+      "Algebra 2 - built stronger problem-solving habits through functions, equations, and data patterns.",
+      "Biology - practiced evidence-based reasoning, lab writing, and observation skills.",
+      "English 1 - strengthened analytical writing, revision, and presentation skills.",
+      "Spanish 2 - developed communication skills through reading, writing, and conversation practice.",
+      "Computer Science Essentials - learned programming logic, web structure, and organized project habits."
+    ]
   },
   {
     period: "Summer 2025",
-    entries: ["Spanish 3", "AP Computer Science through Berkeley ATDP"]
+    entries: [
+      "Spanish 3 - completed summer language coursework with continued grammar, vocabulary, and writing practice.",
+      "AP Computer Science through Berkeley ATDP - studied programming concepts, problem solving, and Java preparation."
+    ]
   },
   {
     period: "2025-2026 Academic Year",
     entries: [
-      "Computer Science Application",
-      "AP Precalculus",
-      "AP World History",
-      "AP Computer Science Principles",
-      "AP Computer Science A",
-      "Honors Chemistry",
-      "English 2"
+      "Computer Science Application - built this React portfolio and documented F1 Race Trace and Java Inheritance projects.",
+      "AP Precalculus - continued advanced math preparation for technical problem solving.",
+      "AP World History - developed research, note-taking, and evidence-based writing skills.",
+      "AP Computer Science Principles - studied computing systems, data, algorithms, and impacts of technology.",
+      "AP Computer Science A - practiced Java syntax, object-oriented programming, and debugging.",
+      "Honors Chemistry - strengthened lab analysis, quantitative reasoning, and scientific communication.",
+      "English 2 - continued literary analysis, writing, and revision work."
     ]
   },
   {
     period: "Summer 2026",
     entries: [
-      "Stanford CS106B: Programming Abstractions",
-      "Future C programming",
-      "Teaching Assistant for Berkeley ATDP professor Flint Christensen"
+      "Stanford CS106B: Programming Abstractions - planned coursework in recursion, data structures, and algorithmic thinking.",
+      "Future C programming - planned study to expand low-level programming and systems understanding.",
+      "Teaching Assistant for Berkeley ATDP professor Flint Christensen - planned support role helping students with programming practice."
     ]
   }
 ];
@@ -136,7 +146,7 @@ const projects = [
     learned:
       "I learned how sports data can be turned into a clear visualization, and how data processing, debugging, and chart design work together in a Python project.",
     skills: ["Python", "FastF1", "Race telemetry", "CSV export", "Data visualization"],
-    imageAlt: "Formula 1 race trace chart preview with telemetry-style lines",
+    imageAlt: "F1 Race Trace Python code screenshots showing FastF1 data loading, gap calculation, CSV export, and plot generation",
     visualType: "race",
     links: [
       { label: "GitHub Source", href: "https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student" },
@@ -328,13 +338,23 @@ const documentationItems = [
     icon: FileText,
     title: "F1 Race Trace Documentation",
     note: "Python FastF1 project source, README, CSV output, chart image, and process reflection.",
-    href: "https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student"
+    href: "https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student",
+    links: [
+      { label: "Repository", href: "https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student" },
+      { label: "README", href: "https://github.com/ShauryaMishra-Lab/F1_Race_Trace_Student/blob/main/README.md" }
+    ]
   },
   {
     icon: BookOpen,
     title: "Java Inheritance Program Documentation",
     note: "Java source files for Pet, Cat, Dog, and InheritedPet, plus README explanation and project reflection.",
-    href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program"
+    href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program",
+    links: [
+      { label: "Repository", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program" },
+      { label: "README", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/README.md" },
+      { label: "Pet.java", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/Pet.java" },
+      { label: "InheritedPet.java", href: "https://github.com/ShauryaMishra-Lab/Java-Inheritance-Program/blob/main/InheritedPet.java" }
+    ]
   }
 ];
 
@@ -560,7 +580,7 @@ function Hero() {
         <div className="hero-copy reveal-on-scroll">
           <p className="kicker">Competitive Golfer / Developer</p>
           <h1 className="animated-title">
-            <span>Green focused.</span>
+            <span>Green Focused.</span>
             <span>Developer.</span>
           </h1>
           <p>
@@ -1055,7 +1075,8 @@ function Projects() {
 
 function Documentation() {
   const [activeDoc, setActiveDoc] = useState(0);
-  const ActiveIcon = documentationItems[activeDoc].icon;
+  const activeDocumentation = documentationItems[activeDoc];
+  const ActiveIcon = activeDocumentation.icon;
 
   return (
     <section id="documentation" className="page-band cream">
@@ -1084,11 +1105,15 @@ function Documentation() {
         </div>
         <div className="doc-preview">
           <ActiveIcon size={30} />
-          <h3>{documentationItems[activeDoc].title}</h3>
-          <p>{documentationItems[activeDoc].note}</p>
-          <a href={documentationItems[activeDoc].href} target="_blank" rel="noreferrer">
-            Open Repository
-          </a>
+          <h3>{activeDocumentation.title}</h3>
+          <p>{activeDocumentation.note}</p>
+          <div className="doc-link-list">
+            {activeDocumentation.links.map((link) => (
+              <a href={link.href} key={link.label} target="_blank" rel="noreferrer">
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -1102,8 +1127,8 @@ function Contact() {
         <p className="kicker">Contact</p>
         <h2>Thank you for viewing my portfolio.</h2>
         <p>
-          This website presents my progress in Computer Science Application, my resume information, and two required
-          project sections with space for final documentation.
+          This website presents my Computer Science Application portfolio, resume information, and two documented
+          projects with source code, project evidence, and reflection.
         </p>
       </div>
       <div className="contact-links">
@@ -1121,7 +1146,7 @@ function Contact() {
 }
 
 export default function App() {
-  const sectionIds = useMemo(() => ["home", ...navItems.map((item) => item.href.slice(1))], []);
+  const sectionIds = useMemo(() => navItems.map((item) => item.href.slice(1)), []);
   const activeSection = useActiveSection(sectionIds);
   const progress = useScrollProgress();
   usePageMotion();

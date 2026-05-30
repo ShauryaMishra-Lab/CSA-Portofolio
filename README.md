@@ -1,6 +1,6 @@
 # CSA Portfolio
 
-A React portfolio website for Shaurya Mishra, built for Computer Science Application. The site presents a competitive golfer and developer identity with animated visuals, resume content, project documentation areas, and two project features.
+A React portfolio website for Shaurya Mishra, built for Computer Science Application. The site presents a competitive golfer and developer identity with animated visuals, detailed resume content, project documentation links, and two project features.
 
 Live site:
 
@@ -98,7 +98,7 @@ The workflow builds the Vite app into `dist/` and publishes that folder to GitHu
 └── README.md
 ```
 
-## Portfolio Sections
+## Portfolio Pages
 
 - Home: competitive golfer and developer identity
 - Performance: highlights for golf, coding, CS growth, and mindset
